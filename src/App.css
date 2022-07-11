@@ -1,38 +1,182 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 .App {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#header {
+  background: #221a2f;
+  padding: 20px 0;
+  color: #fff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#header h1 {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section {
+  padding: 0 20px;
+}
+.list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px 0 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.list .check {
+  font-size: 1.4rem;
+  color: #b4b4b4;
+  cursor: pointer;
+}
+.list .check.on {
+  color: #5c4972;
+}
+.list h3 {
+  font-size: 16px;
+  margin: 0 10px;
+  line-height: 22px;
+  color: #5c4972;
+}
+.list h3.on {
+  color: #b4b4b4;
+  text-decoration: line-through;
+}
+.list em {
+  font-size: 14px;
+  color: #b4b4b4;
+  line-height: 22px;
+}
+.list-icon {
+  margin-left: auto;
+  line-height: 22px;
+}
+.list-icon span {
+  font-size: 1.4rem;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #5c4972;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* icon */
+.icon {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.add, .mode {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #5c4972;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.icon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  margin-top: -1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* modal */
+.add-modal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 40px);
+  background: #221a2f;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: left;
+}
+.add-modal h3 {
+  display: inline-block;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+.add-modal h3 {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+.add-modal .close {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  width: 27px;
+  height: 27px;
+  background: #fff;
+  color: #221a2f;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+.modal-cont {
+  display: flex;
+}
+.add-modal label {
+  font-weight: bold;
+  line-height: 28px;
+  width: auto;
+}
+.add-modal input {
+  margin: 0 10px;
+  padding: 5px;
+  width: calc(100% - 114px);
+  border: none;
+  background: #fff;
+}
+.add-modal button {
+  padding: 5px 10px;
+  margin-left: auto;
+  width: auto;
+  border: none;
+  background: #fff;
+  color: #221a2f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* dark mode */
+.App.dark {
+  background: #111;
+}
+.App.dark #header {
+  background: #5c4972;
+  padding: 20px 0;
+}
+.App.dark .list {
+  border-bottom: 1px solid #333;
+}
+.App.dark .list .check {
+  color: #eee;
+}
+.App.dark .list .check.on {
+  color: #5c4972;
+}
+.App.dark .list h3 {
+  color: #eee;
+}
+.App.dark .list h3.on {
+  color: #666;
+}
+.App.dark .list-icon span {
+  color: #eee;
+}
+.App.dark .add-modal {
+  background: #282331;
+  color: #fff;
 }
